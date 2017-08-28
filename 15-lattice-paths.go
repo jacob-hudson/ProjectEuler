@@ -27,13 +27,13 @@ func route(i, j int) uint64 {
     var result uint64
     // if neither at the right or bottom edge - move down and to the right
     if i < 20 && j < 20 {
-        result = noOfRoutes(i+1, j) + noOfRoutes(i, j+1)
+        result = route(i+1, j) + route(i, j+1)
     // if at the bottom edge - move right
     } else if i < 20 && j == 20 {
-        result = noOfRoutes(i+1, j)
+        result = route(i+1, j)
     // if at the right edge - move down
     } else {
-        result = noOfRoutes(i, j+1)
+        result = route(i, j+1)
     }
     // removes the uint64 0 - marks we visited this intersection before
     arr[i][j] = result
