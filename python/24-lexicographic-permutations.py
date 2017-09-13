@@ -8,14 +8,14 @@ def factorial(n):
 
 def main():
     digits = range(10)
-    res = []
-    n = 999999 # PE uses 1-based indexing
+    result = []
+    n = 999999
 
     for i in xrange(len(digits) - 1, -1, -1):
         index, n = divmod(n, factorial(i))
-        res.append(digits.pop(index))
+        result.append(digits.pop(index))
 
-    print ''.join(str(i) for i in res)
+    print ''.join(str(i) for i in result)
 
 if __name__ == "__main__":
     main()
